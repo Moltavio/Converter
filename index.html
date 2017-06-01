@@ -1,114 +1,117 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <style>
-body {font-family: "Lato", sans-serif;}
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        /* Style the tab */
+        
+        div.tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        /* Style the buttons inside the tab */
+        
+        div.tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        /* Change background color of buttons on hover */
+        
+        div.tab button:hover {
+            background-color: #ddd;
+        }
+        /* Create an active/current tablink class */
+        
+        div.tab button.active {
+            background-color: #ccc;
+        }
+        /* Style the tab content */
+        
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
 
-/* Style the tab */
-div.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-}
+<body>
 
-/* Style the buttons inside the tab */
-div.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-div.tab button:hover {
-    background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-div.tab button.active {
-    background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-</style>
-  </head>
-  <body>
-  
     <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'Millibuckets to Buckets')">Millibuckets to Buckets</button>
         <button class="tablinks" onclick="openTab(event, 'Ingots to Millibuckets')">Ingots to Millibuckets</button>
         <button class="tablinks" onclick="openTab(event, 'Millibuckets to Ingots')">Millibuckets to Ingots</button>
     </div>
-    
+
     <div id="Millibuckets to Buckets" class="tabcontent">
-      <h3>Millibuckets to Buckets Converter
+        <h3>Millibuckets to Buckets Converter
       </h3>
-      <p>Type a value in the mB field to convert the value to B:</p>
-      <p>
-        <label>
-            Millibuckets
-        </label>
-       
+        <p>Type a value in the mB field to convert the value to B:</p>
+        <p>
+            <label>
+                Millibuckets
+            </label>
+
             <input id="InputVariable1" type="number" placeholder="mB" oninput="Converter1(this.value)" onchange="Converter1(this.value)">
-            
-       </p>
-        <p>Buckets: 
-          <span id="outputVariable1"></span>
+
         </p>
-      </div>
-      
-      <div id="Ingots to Millibuckets" class="tabcontent">
+        <p>Buckets:
+            <span id="outputVariable1"></span>
+        </p>
+    </div>
+
+    <div id="Ingots to Millibuckets" class="tabcontent">
         <h3>Ingots to Millibuckets Converter
         </h3>
         <p>Type a value in the I field to convert the value to mB:</p>
         <p>
-          <label>Ingots</label>
-          <input id="InputVariable3" type="number" placeholder="I" oninput="Converter3(this.value)" onchange="Converter3(this.value)">
-          </p>
-          <p>Millibuckets: 
+            <label>Ingots</label>
+            <input id="InputVariable3" type="number" placeholder="I" oninput="Converter3(this.value)" onchange="Converter3(this.value)">
+        </p>
+        <p>Millibuckets:
             <span id="outputVariable3"></span>
-          </p>
-        </div>
-        
-        
-      <div id="Millibuckets to Ingots" class="tabcontent">   
+        </p>
+    </div>
+
+    <div id="Millibuckets to Ingots" class="tabcontent">
         <h3>Millibuckets to Ingots Converter</h3>
-<p>Type a value in the mB field to convert the value to I:</p>
+        <p>Type a value in the mB field to convert the value to I:</p>
 
-<p>
-  <label>Millibuckets</label>
-  <input id="InputVariable4" type="number" placeholder="mB
+        <p>
+            <label>Millibuckets</label>
+            <input id="InputVariable4" type="number" placeholder="mB
   " oninput="Converter4(this.value)" onchange="Converter4(this.value)">
-</p>
-<p>Ingots: <span id="outputVariable4"></span></p>
-</div>
+        </p>
+        <p>Ingots: <span id="outputVariable4"></span></p>
+    </div>
 
+    <Script>
+        function openTab(evt, Name) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
-        <Script>
-function openTab(evt, Name) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-</script>
+</body>
 
-      </body>
-    </html> 
+</html>
