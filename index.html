@@ -71,7 +71,7 @@
 <body>
 
     <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'Millibuckets to Buckets')">Millibuckets to Buckets</button>
+        <button class="tablinks" onclick="openTab(event, 'Millibuckets to Buckets')" id="defaultOpen">Millibuckets to Buckets</button>
         <button class="tablinks" onclick="openTab(event, 'Ingots to Millibuckets')">Ingots to Millibuckets</button>
         <button class="tablinks" onclick="openTab(event, 'Millibuckets to Ingots')">Millibuckets to Ingots</button>
         <button class="tablinks" onclick="openTab(event, 'Minutes to Ticks')">Minutes to Ticks</button>
@@ -132,6 +132,9 @@
     </div>
 
     <Script>
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
         function openTab(evt, Name) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
