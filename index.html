@@ -42,6 +42,28 @@
             padding: 6px 12px;
             border: 1px solid #ccc;
             border-top: none;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+            /* Fading effect takes 1 second */
+        }
+        /* Fade in tabs */
+        
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -52,6 +74,7 @@
         <button class="tablinks" onclick="openTab(event, 'Millibuckets to Buckets')">Millibuckets to Buckets</button>
         <button class="tablinks" onclick="openTab(event, 'Ingots to Millibuckets')">Ingots to Millibuckets</button>
         <button class="tablinks" onclick="openTab(event, 'Millibuckets to Ingots')">Millibuckets to Ingots</button>
+        <button class="tablinks" onclick="openTab(event, 'Minutes to Ticks')">Minutes to Ticks</button>
     </div>
 
     <div id="Millibuckets to Buckets" class="tabcontent">
@@ -96,6 +119,18 @@
         <p>Ingots: <span id="outputVariable4"></span></p>
     </div>
 
+    <div id="Minutes to Ticks" class="tabcontent">
+        <h3>Minutes to Ticks Converter</h3>
+        <p>Type a value in the Min field to convert the value to Ticks:</p>
+
+        <p>
+            <label>Minutes</label>
+            <input id="InputVariable8" type="number" placeholder="Min
+  " oninput="Converter8(this.value)" onchange="Converter8(this.value)">
+        </p>
+        <p>Ticks: <span id="outputVariable8"></span></p>
+    </div>
+
     <Script>
         function openTab(evt, Name) {
             var i, tabcontent, tablinks;
@@ -109,6 +144,22 @@
             }
             document.getElementById(cityName).style.display = "block";
             evt.currentTarget.className += " active";
+        }
+
+        function Converter1(valNum) {
+            document.getElementById("outputVariable1").innerHTML = valNum / 1000;
+        }
+
+        function Converter3(valNum) {
+            document.getElementById("outputVariable3").innerHTML = valNum * 144;
+        }
+
+        function Converter4(valNum) {
+            document.getElementById("outputVariable4").innerHTML = valNum / 144;
+        }
+
+        function Converter8(valNum) {
+            document.getElementById("outputVariable8").innerHTML = valNum * 60 * 20;
         }
     </script>
 
