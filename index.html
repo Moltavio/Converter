@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
+  <head>
+    <style>
 body {font-family: "Lato", sans-serif;}
 
 /* Style the tab */
@@ -41,48 +41,61 @@ div.tab button.active {
     border-top: none;
 }
 </style>
-</head>
-<body>
-
-<p>In this example, we use JavaScript to "click" on the London button, to open the tab on page load.</p>
-
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'Millibuckets to Buckets')" id="defaultOpen">Millibuckets to Buckets</button>
-  <button class="tablinks" onclick="openTab(event, 'Ingots to Millibuckets')">Ingots to Millibuckets</button>
-  <button class="tablinks" onclick="openTab(event, 'Tokyo')">Tokyo</button>
-</div>
-
-<div id="Millibuckets to Buckets" class="tabcontent">
-<h3>Millibuckets to Buckets Converter</h2>
-<p>Type a value in the mB field to convert the value to B:</p>
+  </head>
+  <body>
+  
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Millibuckets to Buckets')">Millibuckets to Buckets</button>
+        <button class="tablinks" onclick="openTab(event, 'Ingots to Millibuckets')">Ingots to Millibuckets</button>
+        <button class="tablinks" onclick="openTab(event, 'Millibuckets to Ingots')">Millibuckets to Ingots</button>
+    </div>
+    
+    <div id="Millibuckets to Buckets" class="tabcontent">
+      <h3>Millibuckets to Buckets Converter
+      </h3>
+      <p>Type a value in the mB field to convert the value to B:</p>
+      <p>
+        <label>
+            Millibuckets
+        </label>
+       
+            <input id="InputVariable1" type="number" placeholder="mB" oninput="Converter1(this.value)" onchange="Converter1(this.value)">
+            
+       </p>
+        <p>Buckets: 
+          <span id="outputVariable1"></span>
+        </p>
+      </div>
+      
+      <div id="Ingots to Millibuckets" class="tabcontent">
+        <h3>Ingots to Millibuckets Converter
+        </h3>
+        <p>Type a value in the I field to convert the value to mB:</p>
+        <p>
+          <label>Ingots</label>
+          <input id="InputVariable3" type="number" placeholder="I" oninput="Converter3(this.value)" onchange="Converter3(this.value)">
+          </p>
+          <p>Millibuckets: 
+            <span id="outputVariable3"></span>
+          </p>
+        </div>
+        
+        
+      <div id="Millibuckets to Ingots" class="tabcontent">   
+        <h3>Millibuckets to Ingots Converter</h3>
+<p>Type a value in the mB field to convert the value to I:</p>
 
 <p>
   <label>Millibuckets</label>
-  <input id="InputVariable1" type="number" placeholder="mB
-  " oninput="Converter1(this.value)" onchange="Converter1(this.value)">
+  <input id="InputVariable4" type="number" placeholder="mB
+  " oninput="Converter4(this.value)" onchange="Converter4(this.value)">
 </p>
-<p>Buckets: <span id="outputVariable1"></span></p>
+<p>Ingots: <span id="outputVariable4"></span></p>
 </div>
 
-<div id="Ingots to Millibuckets" class="tabcontent">
-  <h3>Ingots to Millibuckets Converter</h2>
-<p>Type a value in the I field to convert the value to mB:</p>
 
-<p>
-  <label>Ingots</label>
-  <input id="InputVariable3" type="number" placeholder="I
-  " oninput="Converter3(this.value)" onchange="Converter3(this.value)">
-</p>
-<p>Millibuckets: <span id="outputVariable3"></span></p>
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-<script>
-function openCity(evt, cityName) {
+        <Script>
+function openTab(evt, Name) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -95,10 +108,7 @@ function openCity(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 }
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
 </script>
-     
-</body>
-</html> 
+
+      </body>
+    </html> 
