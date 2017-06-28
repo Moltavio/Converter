@@ -75,6 +75,7 @@
         <button class="tablinks" onclick="openTab(event, 'Ingots to Millibuckets')">Ingots to Millibuckets</button>
         <button class="tablinks" onclick="openTab(event, 'Millibuckets to Ingots')">Millibuckets to Ingots</button>
         <button class="tablinks" onclick="openTab(event, 'Minutes to Ticks')">Minutes to Ticks</button>
+        <button class="tablinks" onclick="openTab(event, 'RF per Tick to RF per min')">RF per Tick to RF per min</button>
     </div>
 
     <div id="Millibuckets to Buckets" class="tabcontent">
@@ -131,6 +132,18 @@
         <p>Ticks: <span id="outputVariable8"></span></p>
     </div>
 
+    <div id="RF per Tick to RF per min" class="tabcontent">
+        <h3>RF per Tick to RF per min Converter</h3>
+        <p>Type a value in the RF/tick field to convert the value to RF/min:</p>
+
+        <p>
+            <label>RF/Tick</label>
+            <input id="InputVariable8" type="number" placeholder="RF/tick
+  " oninput="Converter9(this.value)" onchange="Converter9(this.value)">
+        </p>
+        <p>RF/min: <span id="outputVariable9"></span></p>
+    </div>
+    
     <Script>
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
@@ -164,6 +177,11 @@
         function Converter8(valNum) {
             document.getElementById("outputVariable8").innerHTML = valNum * 60 * 20;
         }
+        
+        function Converter9(valNum) {
+            document.getElementById("outputVariable9").innerHTML = valNum / 20 /60  ;
+        }
+        
     </script>
 
 </body>
